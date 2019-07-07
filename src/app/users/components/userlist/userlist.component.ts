@@ -15,6 +15,7 @@ export class UserlistComponent implements OnInit {
     const usersObservable = this.userservice.getUsers();
     usersObservable.subscribe((usersData: Users[]) =>{
       this.users = usersData;
+      console.log(this.users)
     });
   }
 

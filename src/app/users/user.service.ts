@@ -76,7 +76,7 @@ export class UserService {
     const usersObservable = new Observable(observer =>{
       setTimeout(() =>{
         observer.next(this.users);
-      }, 10000);
+      }, 10);
     });
     return usersObservable;
   }
