@@ -12,10 +12,12 @@ export class UserlistComponent implements OnInit {
   constructor(private userservice: UserService) { }
 
   ngOnInit() {
+    
+    // this.userservice.seeLength();
     const usersObservable = this.userservice.getUsers();
     usersObservable.subscribe((usersData: Users[]) =>{
       this.users = usersData;
-      console.log(this.users)
+      console.log(this.users.length);
     });
   }
 

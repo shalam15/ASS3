@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
+  constructor() {
+  }
 
   users: Users[] = [
     {
@@ -66,11 +68,29 @@ export class UserService {
       ]
 
     },
+    {
+      id: 4,
+      firstName: 'Ousman',
+      lastName: 'Diallo',
+      email: 'doiallo4@student.gsu.edu',
+      addresses: [
+        {
+          addressLine1: '990 hey there bro street',
+          state: 'GA',
+          zip: '56721'
+        },
+        {
+          addressLine2: '911 fire road',
+          state: 'NJ',
+          zip: '12904'
+        }
+      ]
+
+    },
 
   ];
 
-  constructor() {
-  }
+
 
   public getUsers(): any {
     const usersObservable = new Observable(observer =>{
@@ -80,4 +100,15 @@ export class UserService {
     });
     return usersObservable;
   }
+
+getUser(id) : Users{
+  var user = this.users.find(t => t.id == parseInt(id))
+  console.log(user);
+  return user;
+}
+seeLength(){
+  console.log(this.users.length);
+
+}
+
 }

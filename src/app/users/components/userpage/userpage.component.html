@@ -1,1 +1,31 @@
-<p>userpage works!</p>
+<div class="top"></div>
+
+<div *ngIf="user" class="cards">
+    <h3>{{user.firstName+ ' ' + user.lastName}} </h3>
+    <p>{{ user.email }}</p>
+    <div class="addressCard">
+        <div class="eachAddress">
+            <h1>Address Line 1</h1>
+            <h3>{{ user.addresses[0].addressLine1 }}</h3>
+            <p>{{ user.addresses[0].state }}</p>
+            <p>{{ user.addresses[0].zip }}</p>
+        </div>
+
+        <div class="eachAddress">
+            <h1>Address Line 2</h1>
+            <h3>{{ user.addresses[1].addressLine2 }}</h3>
+            <p>{{ user.addresses[1].state }}</p>
+            <p>{{ user.addresses[1].zip }}</p>
+        </div>
+    </div>
+
+
+
+    <button (click)=goBack()>GO Back</button>
+</div>
+<div *ngIf="!user">
+    <div class="cards">
+        <h1>NO USER OF THAT ID</h1>
+        <button (click)=goBack()>GO Back</button>
+    </div>
+</div>
