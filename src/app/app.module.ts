@@ -11,7 +11,7 @@ import { UserlistComponent } from './users/components/userlist/userlist.componen
 
 const routes: Routes = [
   {
-    path: '',
+    path: '#',
     component: UserlistComponent
   }
 ]
